@@ -1,0 +1,6 @@
+/* FONTS */
+@import url("./assets/fonts/montserrat.css");
+@import url("./assets/fonts/source-code-pro.css");
+
+/* TAILWIND CSS */
+@import "tailwindcss";

@@ -4,6 +4,7 @@ import AboutUsView from "../views/AboutUsView.vue";
 import PricingView from "../views/PricingView.vue";
 import APIDocsView from "../views/APIDocsView.vue";
 import ContactUsView from "../views/ContactUsView.vue";
+import NotFoundView from "../views/NotFoundView.vue";
 
 const routers = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,23 +18,47 @@ const routers = createRouter({
             path: "/about-us",
             name: "about us",
             component: AboutUsView,
+            meta: {
+                title: "About Us",
+            }
         },
         {
             path: "/pricing",
             name: "pricing",
             component: PricingView,
+            meta: {
+                title: "Pricing",
+            }
         },
         {
             path: "/api-documentation",
             name: "api documentation",
             component: APIDocsView,
+            meta: {
+                title: "API Documentation",
+            }
         },
         {
             path: "/contact-us",
             name: "contact us",
             component: ContactUsView,
+            meta: {
+                title: "Contact Us",
+            }
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            component: NotFoundView,
+            meta: {
+                title: "Not Found",
+            }
         }
     ]
+})
+
+routers.beforeEach((to, _, next) => {
+    document.title = to.meta.title ? `${to.meta.title} | API PRO` : "API PRO";
+    next()
 })
 
 export default routers;
