@@ -56,9 +56,8 @@ const routers = createRouter({
     ]
 })
 
-routers.beforeEach((to, _, next) => {
+routers.beforeEach((to) => {
     document.title = to.meta.title ? `${to.meta.title} | API PRO` : "API PRO";
-    next()
 })
 
 export default routers;
