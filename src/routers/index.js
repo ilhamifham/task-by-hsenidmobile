@@ -50,7 +50,7 @@ const routers = createRouter({
             path: '/:pathMatch(.*)*',
             component: NotFoundView,
             meta: {
-                title: "Not Found",
+                title: "Page Not Found",
             }
         }
     ]

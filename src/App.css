@@ -8,6 +8,16 @@
 @theme {
   --font-montserrat: "Montserrat";
   --font-source-code-pro: "Source Code Pro";
+
+  --animate-auto-silde: auto-slide 10s linear infinite;
+  @keyframes auto-slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 @layer base {
