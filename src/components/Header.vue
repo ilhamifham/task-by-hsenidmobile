@@ -31,9 +31,13 @@ function handleToggleNav() {
     isToggleNav.value = !isToggleNav.value;
 }
 
+function handleToggleNavClose() {
+    isToggleNav.value = false;
+}
+
 function handleClickOutside(event) {
     if (isToggleNav.value && navElement.value && !navElement.value.contains(event.target)) {
-        isToggleNav.value = false;
+        handleToggleNavClose();
     }
 }
 
@@ -65,7 +69,7 @@ onUnmounted(() => {
             <nav :class="!isToggleNav && 'invisible opacity-0 overflow-hidden'" ref="navElement" class="absolute top-19 left-0 right-0 rounded-2xl bg-neutral-100 p-4 text-lg border border-neutral-300 font-medium duration-300 lg:static lg:visible lg:overflow-visible lg:opacity-100 lg:p-0 lg:border-0 lg:rounded-none lg:duration-[0ms] lg:text-base">
                 <ul class="-mt-1.75 -mb-2 lg:flex lg:mt-0 lg:mb-0">
                     <li v-for="(link, index) in links" :key="index" class="mb-4.25 last:mb-0 transition-all duration-300 hover:text-black lg:mb-0 lg:mr-6 lg:last:mr-0">
-                        <RouterLink @click="handleToggleNav" :to="link.url" active-class="font-bold text-black" class="block">{{ link.name }}</RouterLink>
+                        <RouterLink @click="handleToggleNavClose" :to="link.url" active-class="font-bold text-black" class="block">{{ link.name }}</RouterLink>
                     </li>
                 </ul>
             </nav>

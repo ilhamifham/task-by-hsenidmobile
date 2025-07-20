@@ -22,7 +22,7 @@ defineProps({
 </script>
 
 <template>
-    <component :is="as === 'router-link' ? RouterLink : 'button'" :to="as === 'router-link' ? to : undefined" :type="as === 'button' ? type : undefined" :class="`bg-black border border-neutral-300 px-5 py-3 block text-center text-sm font-medium text-white duration-300 hover:bg-neutral-200 hover:text-black ${customClass}`">
+    <component :is="as === 'router-link' ? RouterLink : 'button'" :to="as === 'router-link' ? to : undefined" :type="as === 'button' ? type : undefined" :class="`bg-black border border-neutral-300 px-5 py-3 block text-center text-sm font-medium text-white transition-[background-color,color] duration-300 hover:bg-neutral-200 hover:text-black ${customClass}`">
         <slot />
     </component>
 </template>
