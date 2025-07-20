@@ -48,7 +48,7 @@ onUnmounted(() => {
 
 <template>
     <header class="p-4 sticky top-0">
-        <div class="bg-neutral-100 p-2 pl-6 flex items-center justify-between rounded-full relative h-15 max-w-[65.75rem] mx-auto lg:pr-6">
+        <div class="bg-neutral-100 p-2 pl-6 flex items-center justify-between rounded-full relative h-15 max-w-[65.75rem] mx-auto border border-neutral-300 lg:pr-6">
             <RouterLink to="/" class="font-bold text-2xl text-black">API PRO</RouterLink>
             <button @click.stop="handleToggleNav" class="bg-black text-white border border-neutral-300 rounded-full transition-[background-color] duration-300 hover:bg-neutral-200 hover:text-black lg:hidden">
                 <svg v-if="isToggleNav" viewBox="0 0 24 24" class="w-10 h-10">
@@ -62,7 +62,7 @@ onUnmounted(() => {
                 </svg>
                 <span class="sr-only">{{ isToggleNav ? "close" : "menu" }}</span>
             </button>
-            <nav :class="!isToggleNav && 'invisible opacity-0 overflow-hidden'" ref="navElement" class="absolute top-19 left-0 right-0 rounded-2xl bg-neutral-100 p-4 text-lg font-medium duration-300 lg:static lg:visible lg:overflow-visible lg:opacity-100 lg:p-0 lg:border-0 lg:rounded-none lg:duration-[0ms] lg:text-base">
+            <nav :class="!isToggleNav && 'invisible opacity-0 overflow-hidden'" ref="navElement" class="absolute top-19 left-0 right-0 rounded-2xl bg-neutral-100 p-4 text-lg border border-neutral-300 font-medium duration-300 lg:static lg:visible lg:overflow-visible lg:opacity-100 lg:p-0 lg:border-0 lg:rounded-none lg:duration-[0ms] lg:text-base">
                 <ul class="-mt-1.75 -mb-2 lg:flex lg:mt-0 lg:mb-0">
                     <li v-for="(link, index) in links" :key="index" class="mb-4.25 last:mb-0 transition-all duration-300 hover:text-black lg:mb-0 lg:mr-6 lg:last:mr-0">
                         <RouterLink @click="handleToggleNav" :to="link.url" active-class="font-bold text-black" class="block">{{ link.name }}</RouterLink>
