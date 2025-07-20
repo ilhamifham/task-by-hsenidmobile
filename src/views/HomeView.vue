@@ -40,7 +40,7 @@ const companyNames = [
             <Tagline>API PRO is the all-in-one platform designed to take your APIs from development to production with unparalleled speed, security, and AI-driven insights.</Tagline>
             <Button as="router-link" to="/" custom-class="rounded-full w-fit mx-auto mt-4">Get Started for Free</Button>
         </div>
-        <section class="pt-16 xl:pt-32">
+        <section class="pt-16 xl:pt-28">
             <H2>Everything You Need in One Platform</H2>
             <ul class="md:flex md:flex-wrap md:justify-center md:gap-4">
                 <Card v-for="(feature, index) in features" :key="index">
@@ -52,7 +52,7 @@ const companyNames = [
                 </Card>
             </ul>
         </section>
-        <section class="pt-16 xl:pt-32">
+        <section class="pt-16 xl:pt-28">
             <H2>Trusted by the World's Most Innovative Companies</H2>
             <div class="overflow-x-hidden flex flex-row relative before:absolute before:bg-linear-to-r before:from-white before:to-transparent before:z-10 before:w-10 before:h-full after:absolute after:right-0 after:bg-linear-to-l after:from-white after:to-transparent after:z-10 after:w-10 after:h-full">
                 <ul class="flex flex-row gap-6 text-3xl font-medium animate-auto-silde flex-none pl-6">

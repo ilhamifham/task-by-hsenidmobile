@@ -1,5 +1,5 @@
 <script setup>
-import { ref, useTemplateRef, onMounted, onUnmounted } from 'vue';
+import { ref, useTemplateRef, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const isToggleNav = ref(false);
@@ -35,23 +35,21 @@ function handleToggleNavClose() {
     isToggleNav.value = false;
 }
 
-function handleClickOutside(event) {
-    if (isToggleNav.value && navElement.value && !navElement.value.contains(event.target)) {
-        handleToggleNavClose();
-    }
+function handleClickOutside() {
+    document.addEventListener('click', (event) => {
+        if (isToggleNav.value && navElement.value && !navElement.value.contains(event.target)) {
+            handleToggleNavClose();
+        }
+    })
 }
 
-onMounted(() => {
-    document.addEventListener('click', handleClickOutside);
-});
-
-onUnmounted(() => {
-    document.removeEventListener('click', handleClickOutside);
+watch(isToggleNav, () => {
+    handleClickOutside();
 });
 </script>
 
 <template>
-    <header class="p-4 sticky top-0">
+    <header class="pt-4 px-4 sticky top-0 z-1">
         <div class="bg-neutral-100 p-2 pl-6 flex items-center justify-between rounded-full relative h-15 max-w-[65.75rem] mx-auto border border-neutral-300 lg:pr-6">
             <RouterLink to="/" class="font-bold text-2xl text-black">API PRO</RouterLink>
             <button @click.stop="handleToggleNav" class="bg-black text-white border border-neutral-300 rounded-full transition-[background-color] duration-300 hover:bg-neutral-200 hover:text-black lg:hidden">

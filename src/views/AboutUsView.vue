@@ -36,7 +36,7 @@ onMounted(async () => {
             <H1>We Empower Developers to Build The Future.</H1>
             <Tagline>In today's digital world, APIs are the backbone of innovation. Yet, managing them has become increasingly complex. API PRO was founded on a simple principle: to give developers and businesses the tools they need to build, manage, and scale their APIs without the headache. We handle the complexity, so you can focus on creating amazing products.</Tagline>
         </div>
-        <section class="pt-16 xl:pt-32">
+        <section class="pt-16 xl:pt-28">
             <H2>The Team Behind API PRO</H2>
             <ul v-if="teamMembers.isLoading" class="md:flex md:flex-wrap md:gap-4">
                 <Card v-for="(_, index) in 10" :key="index" class="h-51.25 max-w-80 mx-auto md:max-w-none animate-pulse"></Card>
